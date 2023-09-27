@@ -70,12 +70,12 @@ namespace CyberSource.Model
         /// <param name="RequestorInitiatedAuthenticationIndicator">Indicates the type of 3RI request.  Possible Values:  01 - Recurring transaction  02 - Installment transaction  03 - Add card  04 - Maintain card  05 - Account verification  06 - Split/delayed shipment  07 - Top-up  08 - Mail Order  09 - Telephone Order  10 - Whitelist status check  11 - Other payment .</param>
         /// <param name="RequestorName">Cardinal&#39;s directory server assigned 3DS Requestor Name value.</param>
         /// <param name="ReferenceId">Reference ID that corresponds to the device fingerprinting data that was collected previously. Note Required for Hybrid integration. .</param>
-        /// <param name="SdkMaxTimeout">This field indicates the maximum amount of time for all 3DS 2.0 messages to be communicated between all components (in minutes).  Possible Values:  Greater than or equal to 05 (05 is the minimum timeout to set)  Cardinal Default is set to 15  NOTE: This field is a required 3DS 2.0 field and Cardinal sends in a default of 15 if nothing is passed .</param>
+        /// <param name="SdkTimeout">This field indicates the maximum amount of time for all 3DS 2.0 messages to be communicated between all components (in minutes).  Possible Values:  Greater than or equal to 05 (05 is the minimum timeout to set)  Cardinal Default is set to 15  NOTE: This field is a required 3DS 2.0 field and Cardinal sends in a default of 15 if nothing is passed .</param>
         /// <param name="SecureCorporatePaymentIndicator">Indicates dedicated payment processes and procedures were used, potential secure corporate payment exemption applies. Possible Values : 0/1 .</param>
         /// <param name="TransactionMode">Transaction mode identifier. Identifies the channel from which the transaction originates. Possible values:  - &#x60;M&#x60;: MOTO (Mail Order Telephone Order) - &#x60;R&#x60;: Retail - &#x60;S&#x60;: eCommerce - &#x60;P&#x60;: Mobile Device - &#x60;T&#x60;: Tablet .</param>
         /// <param name="WhiteListStatus">Enables the communication of trusted beneficiary/whitelist status between the ACS, the DS and the 3DS Requestor.  Possible Values:  Y - 3DS Requestor is whitelisted by cardholder  N - 3DS Requestor is not whitelisted by cardholder .</param>
         /// <param name="ScoreRequest">Risk Assessment from Mastercard. This is to be sent by merchant if they would like to request a score.</param>
-        public Riskv1decisionsConsumerAuthenticationInformation(Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication StrongAuthentication = default(Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication), string AuthenticationType = default(string), string AcsWindowSize = default(string), string AlternateAuthenticationData = default(string), string AlternateAuthenticationDate = default(string), string AlternateAuthenticationMethod = default(string), string AuthenticationDate = default(string), string AuthenticationTransactionId = default(string), int? TransactionFlowIndicator = default(int?), string ChallengeCancelCode = default(string), string ChallengeCode = default(string), string ChallengeStatus = default(string), string CustomerCardAlias = default(string), string DecoupledAuthenticationIndicator = default(string), string DecoupledAuthenticationMaxTime = default(string), bool? DefaultCard = default(bool?), string DeviceChannel = default(string), int? InstallmentTotalCount = default(int?), string MerchantFraudRate = default(string), bool? MarketingOptIn = default(bool?), string MarketingSource = default(string), string Mcc = default(string), int? MerchantScore = default(int?), string MessageCategory = default(string), string NpaCode = default(string), string OverridePaymentMethod = default(string), string OverrideCountryCode = default(string), string PriorAuthenticationData = default(string), string PriorAuthenticationMethod = default(string), string PriorAuthenticationReferenceId = default(string), string PriorAuthenticationTime = default(string), string ProductCode = default(string), string ReturnUrl = default(string), string RequestorId = default(string), string RequestorInitiatedAuthenticationIndicator = default(string), string RequestorName = default(string), string ReferenceId = default(string), string SdkMaxTimeout = default(string), string SecureCorporatePaymentIndicator = default(string), string TransactionMode = default(string), string WhiteListStatus = default(string), int? ScoreRequest = default(int?))
+        public Riskv1decisionsConsumerAuthenticationInformation(Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication StrongAuthentication = default(Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication), string AuthenticationType = default(string), string AcsWindowSize = default(string), string AlternateAuthenticationData = default(string), string AlternateAuthenticationDate = default(string), string AlternateAuthenticationMethod = default(string), string AuthenticationDate = default(string), string AuthenticationTransactionId = default(string), int? TransactionFlowIndicator = default(int?), string ChallengeCancelCode = default(string), string ChallengeCode = default(string), string ChallengeStatus = default(string), string CustomerCardAlias = default(string), string DecoupledAuthenticationIndicator = default(string), string DecoupledAuthenticationMaxTime = default(string), bool? DefaultCard = default(bool?), string DeviceChannel = default(string), int? InstallmentTotalCount = default(int?), string MerchantFraudRate = default(string), bool? MarketingOptIn = default(bool?), string MarketingSource = default(string), string Mcc = default(string), int? MerchantScore = default(int?), string MessageCategory = default(string), string NpaCode = default(string), string OverridePaymentMethod = default(string), string OverrideCountryCode = default(string), string PriorAuthenticationData = default(string), string PriorAuthenticationMethod = default(string), string PriorAuthenticationReferenceId = default(string), string PriorAuthenticationTime = default(string), string ProductCode = default(string), string ReturnUrl = default(string), string RequestorId = default(string), string RequestorInitiatedAuthenticationIndicator = default(string), string RequestorName = default(string), string ReferenceId = default(string), string SdkTimeout = default(string), string SecureCorporatePaymentIndicator = default(string), string TransactionMode = default(string), string WhiteListStatus = default(string), int? ScoreRequest = default(int?))
         {
             this.StrongAuthentication = StrongAuthentication;
             this.AuthenticationType = AuthenticationType;
@@ -114,7 +114,7 @@ namespace CyberSource.Model
             this.RequestorInitiatedAuthenticationIndicator = RequestorInitiatedAuthenticationIndicator;
             this.RequestorName = RequestorName;
             this.ReferenceId = ReferenceId;
-            this.SdkMaxTimeout = SdkMaxTimeout;
+            this.SdkTimeout = SdkTimeout;
             this.SecureCorporatePaymentIndicator = SecureCorporatePaymentIndicator;
             this.TransactionMode = TransactionMode;
             this.WhiteListStatus = WhiteListStatus;
@@ -383,8 +383,8 @@ namespace CyberSource.Model
         /// This field indicates the maximum amount of time for all 3DS 2.0 messages to be communicated between all components (in minutes).  Possible Values:  Greater than or equal to 05 (05 is the minimum timeout to set)  Cardinal Default is set to 15  NOTE: This field is a required 3DS 2.0 field and Cardinal sends in a default of 15 if nothing is passed 
         /// </summary>
         /// <value>This field indicates the maximum amount of time for all 3DS 2.0 messages to be communicated between all components (in minutes).  Possible Values:  Greater than or equal to 05 (05 is the minimum timeout to set)  Cardinal Default is set to 15  NOTE: This field is a required 3DS 2.0 field and Cardinal sends in a default of 15 if nothing is passed </value>
-        [DataMember(Name="sdkMaxTimeout", EmitDefaultValue=false)]
-        public string SdkMaxTimeout { get; set; }
+        [DataMember(Name="sdkTimeout", EmitDefaultValue=false)]
+        public string SdkTimeout { get; set; }
 
         /// <summary>
         /// Indicates dedicated payment processes and procedures were used, potential secure corporate payment exemption applies. Possible Values : 0/1 
@@ -459,7 +459,7 @@ namespace CyberSource.Model
             sb.Append("  RequestorInitiatedAuthenticationIndicator: ").Append(RequestorInitiatedAuthenticationIndicator).Append("\n");
             sb.Append("  RequestorName: ").Append(RequestorName).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
-            sb.Append("  SdkMaxTimeout: ").Append(SdkMaxTimeout).Append("\n");
+            sb.Append("  SdkTimeout: ").Append(SdkTimeout).Append("\n");
             sb.Append("  SecureCorporatePaymentIndicator: ").Append(SecureCorporatePaymentIndicator).Append("\n");
             sb.Append("  TransactionMode: ").Append(TransactionMode).Append("\n");
             sb.Append("  WhiteListStatus: ").Append(WhiteListStatus).Append("\n");
@@ -686,9 +686,9 @@ namespace CyberSource.Model
                     this.ReferenceId.Equals(other.ReferenceId)
                 ) && 
                 (
-                    this.SdkMaxTimeout == other.SdkMaxTimeout ||
-                    this.SdkMaxTimeout != null &&
-                    this.SdkMaxTimeout.Equals(other.SdkMaxTimeout)
+                    this.SdkTimeout == other.SdkTimeout ||
+                    this.SdkTimeout != null &&
+                    this.SdkTimeout.Equals(other.SdkTimeout)
                 ) && 
                 (
                     this.SecureCorporatePaymentIndicator == other.SecureCorporatePaymentIndicator ||
@@ -797,8 +797,8 @@ namespace CyberSource.Model
                     hash = hash * 59 + this.RequestorName.GetHashCode();
                 if (this.ReferenceId != null)
                     hash = hash * 59 + this.ReferenceId.GetHashCode();
-                if (this.SdkMaxTimeout != null)
-                    hash = hash * 59 + this.SdkMaxTimeout.GetHashCode();
+                if (this.SdkTimeout != null)
+                    hash = hash * 59 + this.SdkTimeout.GetHashCode();
                 if (this.SecureCorporatePaymentIndicator != null)
                     hash = hash * 59 + this.SecureCorporatePaymentIndicator.GetHashCode();
                 if (this.TransactionMode != null)

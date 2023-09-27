@@ -42,14 +42,14 @@ namespace CyberSource.Client
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
-        partial void InterceptRequest(RestRequest request); // CHANGED
+        partial void InterceptRequest(IRestRequest request); // CHANGED
 
         /// <summary>
         /// Allows for extending response processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
         /// <param name="response">The RestSharp response object</param>
-        partial void InterceptResponse(RestRequest request, RestResponse response); // CHANGED
+        partial void InterceptResponse(IRestRequest request, IRestResponse response); // CHANGED
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
@@ -130,8 +130,8 @@ namespace CyberSource.Client
         /// </summary>
         private static Logger logger;
 
-        // Creates and sets up a RestRequest prior to a call.
-        private RestRequest PrepareRequest(
+        // Creates and sets up a IRestRequest prior to a call.
+        private IRestRequest PrepareRequest(
             string path, Method method, Dictionary<string, string> queryParams, object postBody,
             Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
             Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
@@ -244,7 +244,7 @@ namespace CyberSource.Client
             return request;
         }
 
-        private RestRequest PrepareRestRequest(
+        private IRestRequest PrepareIRestRequest(
             string path, Method method, Dictionary<string, string> queryParams, object postBody,
             Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
             Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
@@ -269,12 +269,12 @@ namespace CyberSource.Client
                 }
             }
 
-            RestRequest requestT = new RestRequest(path);
-            RestClient.Options.UserAgent = Configuration.UserAgent;
+            IRestRequest requestT = new RestRequest(path);
+            RestClient.UserAgent = Configuration.UserAgent;
 
             if (Configuration.Proxy != null)
             {
-                RestClient.Options.Proxy = Configuration.Proxy;
+                RestClient.Proxy = Configuration.Proxy;
             }
 
             // Add Header Parameter, if any
@@ -308,7 +308,7 @@ namespace CyberSource.Client
                     }
                     if (param.Key == "Date")
                     {
-                        requestT.AddHeader("Date", DateTime.Parse(param.Value));
+                        requestT.AddHeader("Date", DateTime.Parse(param.Value).ToString());
                     }
                     else if (param.Key == "Host")
                     { }
@@ -349,7 +349,7 @@ namespace CyberSource.Client
             }
 
             //initiate a HttpWebRequest object
-            HttpWebRequest requestT = (HttpWebRequest)WebRequest.Create(Uri.EscapeUriString("https://" + RestClient.Options.BaseUrl.Host + path));
+            HttpWebRequest requestT = (HttpWebRequest)WebRequest.Create(Uri.EscapeUriString("https://" + RestClient.BaseUrl.Host + path));
             requestT.UserAgent = Configuration.UserAgent;
 
             if (Configuration.Proxy != null)
@@ -443,13 +443,13 @@ namespace CyberSource.Client
             // set timeout
             request.Timeout = Configuration.Timeout;
             // set user agent
-            RestClient.Options.UserAgent = Configuration.UserAgent;
+            RestClient.UserAgent = Configuration.UserAgent;
 
             // RestClient.ClearHandlers();
 
             if (Configuration.Proxy != null)
             {
-                RestClient.Options.Proxy = Configuration.Proxy;
+                RestClient.Proxy = Configuration.Proxy;
             }
 
             // Adding Client Cert
@@ -467,7 +467,7 @@ namespace CyberSource.Client
                 // Importing Certificates
                 var certificate = new X509Certificate2(fileName, clientCertPassword);
                 clientCertPassword.Dispose();
-                RestClient.Options.ClientCertificates = new X509CertificateCollection { certificate };
+                RestClient.ClientCertificates = new X509CertificateCollection { certificate };
             }
 
             // Logging Request Headers
@@ -570,7 +570,7 @@ namespace CyberSource.Client
             // set timeout
             request.Timeout = Configuration.Timeout;
             // set user agent
-            RestClient.Options.UserAgent = Configuration.UserAgent;
+            RestClient.UserAgent = Configuration.UserAgent;
 
             if (logUtility.IsMaskingEnabled(logger))
             {
@@ -582,7 +582,7 @@ namespace CyberSource.Client
             }
 
             InterceptRequest(request);
-            var response = await RestClient.ExecuteAsync(request);
+            var response = await RestClient.ExecuteTaskAsync( request);
             InterceptResponse(request, response);
 
             // Logging Response Headers
@@ -692,7 +692,7 @@ namespace CyberSource.Client
         /// <param name="response">The HTTP response.</param>
         /// <param name="type">Object type.</param>
         /// <returns>Object representation of the JSON string.</returns>
-        public object Deserialize(RestResponse response, Type type) // CHANGED
+        public object Deserialize(IRestResponse response, Type type) // CHANGED
         {
             IList<Parameter> headers = response.Headers.ToList<Parameter>();
             if (type == typeof(byte[])) // return byte array
@@ -993,7 +993,7 @@ namespace CyberSource.Client
 
             if (Configuration.Proxy != null)
             {
-                RestClient.Options.Proxy = Configuration.Proxy;
+                RestClient.Proxy = Configuration.Proxy;
             }
         }
     }

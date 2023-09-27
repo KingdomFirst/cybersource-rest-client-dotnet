@@ -457,12 +457,12 @@ namespace CyberSource.Test
             // TODO unit test for the property 'ReferenceId'
         }
         /// <summary>
-        /// Test the property 'SdkMaxTimeout'
+        /// Test the property 'SdkTimeout'
         /// </summary>
         [Test]
-        public void SdkMaxTimeoutTest()
+        public void SdkTimeoutTest()
         {
-            // TODO unit test for the property 'SdkMaxTimeout'
+            // TODO unit test for the property 'SdkTimeout'
         }
         /// <summary>
         /// Test the property 'SecureCorporatePaymentIndicator'

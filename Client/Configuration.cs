@@ -148,12 +148,12 @@ namespace CyberSource.Client
         /// <value>Timeout.</value>
         public int Timeout
         {
-            get { return ApiClient.RestClient.Options.MaxTimeout; }
+            get { return ApiClient.RestClient.Timeout; }
 
             set
             {
                 if (ApiClient != null)
-                    ApiClient.RestClient.Options.MaxTimeout = value;
+                    ApiClient.RestClient.Timeout = value;
             }
         }
 
