@@ -973,23 +973,23 @@ namespace CyberSource.Client
 
             //Set the Configuration
             Configuration.DefaultHeader = authenticationHeaders;
-            //if (!string.IsNullOrWhiteSpace(merchantConfig.IntermediateHost))
-            //{
-            //    //change with intermediate hostname if present
-            //    //supporting both for http or https for intermediate url
-            //    if (merchantConfig.IntermediateHost.StartsWith("http://") || merchantConfig.IntermediateHost.StartsWith("https://"))
-            //    {
-            //        RestClient = new RestClient(merchantConfig.IntermediateHost);
-            //    }
-            //    else
-            //    {
-            //        RestClient = new RestClient("https://" + merchantConfig.IntermediateHost);
-            //    }
-            //}
-            //else
-            //{
+            if (!string.IsNullOrWhiteSpace(merchantConfig.IntermediateHost))
+            {
+                //change with intermediate hostname if present
+                //supporting both for http or https for intermediate url
+                if (merchantConfig.IntermediateHost.StartsWith("http://") || merchantConfig.IntermediateHost.StartsWith("https://"))
+                {
+                    RestClient = new RestClient(merchantConfig.IntermediateHost);
+                }
+                else
+                {
+                    RestClient = new RestClient("https://" + merchantConfig.IntermediateHost);
+                }
+            }
+            else
+            {
                 RestClient = new RestClient("https://" + merchantConfig.HostName);
-            //}
+            }
 
             if (Configuration.Proxy != null)
             {
