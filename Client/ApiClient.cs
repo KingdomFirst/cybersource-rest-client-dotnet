@@ -231,8 +231,8 @@ namespace CyberSource.Client
                     }
                     else
                     {
-                        // request.AddParameter("application/json", postBody, ParameterType.RequestBody);
-                        request.AddJsonBody(postBody);
+                        request.AddParameter("application/json", postBody, ParameterType.RequestBody);
+                        //request.AddJsonBody(postBody); // RestSharp 108+ change
                     }
                 }
                 else if (postBody.GetType() == typeof(byte[]))
