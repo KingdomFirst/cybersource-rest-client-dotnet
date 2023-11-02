@@ -102,4 +102,7 @@ OpenAPI spec version: 0.0.1
     <Content Include="license.txt" />
   </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y /R "$(TargetPath)" "$(SolutionDir)KFSRockAssemblies\libs"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
