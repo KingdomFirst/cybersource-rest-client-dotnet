@@ -33,11 +33,16 @@ namespace CyberSource.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateBundledDecisionManagerCaseRequest" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected CreateBundledDecisionManagerCaseRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateBundledDecisionManagerCaseRequest" /> class.
+        /// </summary>
         /// <param name="ClientReferenceInformation">ClientReferenceInformation.</param>
         /// <param name="ProcessorInformation">ProcessorInformation.</param>
         /// <param name="ProcessingInformation">ProcessingInformation.</param>
         /// <param name="PaymentInformation">PaymentInformation.</param>
-        /// <param name="OrderInformation">OrderInformation.</param>
+        /// <param name="OrderInformation">OrderInformation (required).</param>
         /// <param name="BuyerInformation">BuyerInformation.</param>
         /// <param name="DeviceInformation">DeviceInformation.</param>
         /// <param name="RiskInformation">RiskInformation.</param>
@@ -49,13 +54,21 @@ namespace CyberSource.Model
         /// <param name="ConsumerAuthenticationInformation">ConsumerAuthenticationInformation.</param>
         /// <param name="WatchlistScreeningInformation">WatchlistScreeningInformation.</param>
         /// <param name="TokenInformation">TokenInformation.</param>
-        public CreateBundledDecisionManagerCaseRequest(Riskv1decisionsClientReferenceInformation ClientReferenceInformation = default(Riskv1decisionsClientReferenceInformation), Riskv1decisionsProcessorInformation ProcessorInformation = default(Riskv1decisionsProcessorInformation), Riskv1decisionsProcessingInformation ProcessingInformation = default(Riskv1decisionsProcessingInformation), Riskv1decisionsPaymentInformation PaymentInformation = default(Riskv1decisionsPaymentInformation), Riskv1decisionsOrderInformation OrderInformation = default(Riskv1decisionsOrderInformation), Riskv1decisionsBuyerInformation BuyerInformation = default(Riskv1decisionsBuyerInformation), Riskv1decisionsDeviceInformation DeviceInformation = default(Riskv1decisionsDeviceInformation), Riskv1decisionsRiskInformation RiskInformation = default(Riskv1decisionsRiskInformation), Riskv1decisionsTravelInformation TravelInformation = default(Riskv1decisionsTravelInformation), List<Riskv1decisionsMerchantDefinedInformation> MerchantDefinedInformation = default(List<Riskv1decisionsMerchantDefinedInformation>), Riskv1decisionsMerchantInformation MerchantInformation = default(Riskv1decisionsMerchantInformation), Ptsv2paymentsAcquirerInformation AcquirerInformation = default(Ptsv2paymentsAcquirerInformation), Ptsv2paymentsRecurringPaymentInformation RecurringPaymentInformation = default(Ptsv2paymentsRecurringPaymentInformation), Riskv1decisionsConsumerAuthenticationInformation ConsumerAuthenticationInformation = default(Riskv1decisionsConsumerAuthenticationInformation), Ptsv2paymentsWatchlistScreeningInformation WatchlistScreeningInformation = default(Ptsv2paymentsWatchlistScreeningInformation), Riskv1decisionsTokenInformation TokenInformation = default(Riskv1decisionsTokenInformation))
+        public CreateBundledDecisionManagerCaseRequest(Riskv1decisionsClientReferenceInformation ClientReferenceInformation = default(Riskv1decisionsClientReferenceInformation), Riskv1decisionsProcessorInformation ProcessorInformation = default(Riskv1decisionsProcessorInformation), Riskv1decisionsProcessingInformation ProcessingInformation = default(Riskv1decisionsProcessingInformation), Riskv1decisionsPaymentInformation PaymentInformation = default(Riskv1decisionsPaymentInformation), Riskv1decisionsOrderInformation OrderInformation = default(Riskv1decisionsOrderInformation), Riskv1decisionsBuyerInformation BuyerInformation = default(Riskv1decisionsBuyerInformation), Riskv1decisionsDeviceInformation DeviceInformation = default(Riskv1decisionsDeviceInformation), Riskv1decisionsRiskInformation RiskInformation = default(Riskv1decisionsRiskInformation), Riskv1decisionsTravelInformation TravelInformation = default(Riskv1decisionsTravelInformation), List<Riskv1decisionsMerchantDefinedInformation> MerchantDefinedInformation = default(List<Riskv1decisionsMerchantDefinedInformation>), Riskv1decisionsMerchantInformation MerchantInformation = default(Riskv1decisionsMerchantInformation), Riskv1decisionsAcquirerInformation AcquirerInformation = default(Riskv1decisionsAcquirerInformation), Ptsv2paymentsRecurringPaymentInformation RecurringPaymentInformation = default(Ptsv2paymentsRecurringPaymentInformation), Riskv1decisionsConsumerAuthenticationInformation ConsumerAuthenticationInformation = default(Riskv1decisionsConsumerAuthenticationInformation), Ptsv2paymentsWatchlistScreeningInformation WatchlistScreeningInformation = default(Ptsv2paymentsWatchlistScreeningInformation), Riskv1decisionsTokenInformation TokenInformation = default(Riskv1decisionsTokenInformation))
         {
+            // to ensure "OrderInformation" is required (not null)
+            if (OrderInformation == null)
+            {
+                throw new InvalidDataException("OrderInformation is a required property for CreateBundledDecisionManagerCaseRequest and cannot be null");
+            }
+            else
+            {
+                this.OrderInformation = OrderInformation;
+            }
             this.ClientReferenceInformation = ClientReferenceInformation;
             this.ProcessorInformation = ProcessorInformation;
             this.ProcessingInformation = ProcessingInformation;
             this.PaymentInformation = PaymentInformation;
-            this.OrderInformation = OrderInformation;
             this.BuyerInformation = BuyerInformation;
             this.DeviceInformation = DeviceInformation;
             this.RiskInformation = RiskInformation;
@@ -139,7 +152,7 @@ namespace CyberSource.Model
         /// Gets or Sets AcquirerInformation
         /// </summary>
         [DataMember(Name="acquirerInformation", EmitDefaultValue=false)]
-        public Ptsv2paymentsAcquirerInformation AcquirerInformation { get; set; }
+        public Riskv1decisionsAcquirerInformation AcquirerInformation { get; set; }
 
         /// <summary>
         /// Gets or Sets RecurringPaymentInformation

@@ -72,6 +72,38 @@ namespace CyberSource.Test
         {
             // TODO unit test for the property 'TransactionId'
         }
+        /// <summary>
+        /// Test the property 'NetworkTransactionId'
+        /// </summary>
+        [Test]
+        public void NetworkTransactionIdTest()
+        {
+            // TODO unit test for the property 'NetworkTransactionId'
+        }
+        /// <summary>
+        /// Test the property 'ResponseDetails'
+        /// </summary>
+        [Test]
+        public void ResponseDetailsTest()
+        {
+            // TODO unit test for the property 'ResponseDetails'
+        }
+        /// <summary>
+        /// Test the property 'ResponseCode'
+        /// </summary>
+        [Test]
+        public void ResponseCodeTest()
+        {
+            // TODO unit test for the property 'ResponseCode'
+        }
+        /// <summary>
+        /// Test the property 'ProviderResponse'
+        /// </summary>
+        [Test]
+        public void ProviderResponseTest()
+        {
+            // TODO unit test for the property 'ProviderResponse'
+        }
 
     }
 

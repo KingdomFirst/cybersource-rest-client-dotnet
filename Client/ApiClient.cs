@@ -271,11 +271,15 @@ namespace CyberSource.Client
 
             IRestRequest requestT = new RestRequest(path);
             RestClient.UserAgent = Configuration.UserAgent;
+           // RestClientOptions clientOptions = RestClient.Options; // newer version of RestSharp Required
 
             if (Configuration.Proxy != null)
             {
                 RestClient.Proxy = Configuration.Proxy;
             }
+
+            // RestClient = new RestClient(clientOptions); // newer version of RestSharp Required
+            // RestClient.Options.UserAgent = Configuration.UserAgent; // newer version of RestSharp Required
 
             // Add Header Parameter, if any
             // Passed to this function
@@ -444,6 +448,7 @@ namespace CyberSource.Client
             request.Timeout = Configuration.Timeout;
             // set user agent
             RestClient.UserAgent = Configuration.UserAgent;
+            // RestClientOptions clientOptions = RestClient.Options; // newer version of RestSharp Required
 
             // RestClient.ClearHandlers();
 
@@ -469,6 +474,9 @@ namespace CyberSource.Client
                 clientCertPassword.Dispose();
                 RestClient.ClientCertificates = new X509CertificateCollection { certificate };
             }
+
+            // RestClient = new RestClient(clientOptions); // newer version of RestSharp Required
+            // RestClient.Options.UserAgent = Configuration.UserAgent; // newer version of RestSharp Required
 
             // Logging Request Headers
             var headerPrintOutput = new StringBuilder();
@@ -571,6 +579,7 @@ namespace CyberSource.Client
             request.Timeout = Configuration.Timeout;
             // set user agent
             RestClient.UserAgent = Configuration.UserAgent;
+            // RestClientOptions clientOptions = RestClient.Options; // newer version of RestSharp Required
 
             if (logUtility.IsMaskingEnabled(logger))
             {
@@ -581,7 +590,10 @@ namespace CyberSource.Client
                 logger.Debug($"HTTP Request Headers :\n{headerPrintOutput.ToString()}");
             }
 
-            InterceptRequest(request);
+            //RestClient = new RestClient(clientOptions); // newer version of RestSharp Required
+            //RestClient.Options.UserAgent = Configuration.UserAgent; // newer version of RestSharp Required
+
+            InterceptRequest( request);
             var response = await RestClient.ExecuteTaskAsync( request);
             InterceptResponse(request, response);
 
@@ -991,10 +1003,13 @@ namespace CyberSource.Client
                 RestClient = new RestClient("https://" + merchantConfig.HostName);
             }
 
+            // RestClientOptions clientOptions = RestClient.Options; // newer version of RestSharp Required
             if (Configuration.Proxy != null)
             {
                 RestClient.Proxy = Configuration.Proxy;
             }
+
+            //RestClient = new RestClient(clientOptions); // newer version of RestSharp Required
         }
     }
 }

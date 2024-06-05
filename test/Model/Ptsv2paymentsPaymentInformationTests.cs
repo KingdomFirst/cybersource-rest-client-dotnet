@@ -81,6 +81,14 @@ namespace CyberSource.Test
             // TODO unit test for the property 'TokenizedCard'
         }
         /// <summary>
+        /// Test the property 'DirectDebit'
+        /// </summary>
+        [Test]
+        public void DirectDebitTest()
+        {
+            // TODO unit test for the property 'DirectDebit'
+        }
+        /// <summary>
         /// Test the property 'FluidData'
         /// </summary>
         [Test]
@@ -137,6 +145,14 @@ namespace CyberSource.Test
             // TODO unit test for the property 'Bank'
         }
         /// <summary>
+        /// Test the property 'Options'
+        /// </summary>
+        [Test]
+        public void OptionsTest()
+        {
+            // TODO unit test for the property 'Options'
+        }
+        /// <summary>
         /// Test the property 'PaymentType'
         /// </summary>
         [Test]
@@ -151,6 +167,14 @@ namespace CyberSource.Test
         public void InitiationChannelTest()
         {
             // TODO unit test for the property 'InitiationChannel'
+        }
+        /// <summary>
+        /// Test the property 'Sepa'
+        /// </summary>
+        [Test]
+        public void SepaTest()
+        {
+            // TODO unit test for the property 'Sepa'
         }
         /// <summary>
         /// Test the property 'EWallet'

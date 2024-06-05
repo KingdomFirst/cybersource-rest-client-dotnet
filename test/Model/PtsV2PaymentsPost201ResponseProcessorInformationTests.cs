@@ -328,6 +328,46 @@ namespace CyberSource.Test
         {
             // TODO unit test for the property 'PublicKey'
         }
+        /// <summary>
+        /// Test the property 'SellerProtection'
+        /// </summary>
+        [Test]
+        public void SellerProtectionTest()
+        {
+            // TODO unit test for the property 'SellerProtection'
+        }
+        /// <summary>
+        /// Test the property 'TransactionExpiryDate'
+        /// </summary>
+        [Test]
+        public void TransactionExpiryDateTest()
+        {
+            // TODO unit test for the property 'TransactionExpiryDate'
+        }
+        /// <summary>
+        /// Test the property 'CustomUrl'
+        /// </summary>
+        [Test]
+        public void CustomUrlTest()
+        {
+            // TODO unit test for the property 'CustomUrl'
+        }
+        /// <summary>
+        /// Test the property 'SchemeAssignedId'
+        /// </summary>
+        [Test]
+        public void SchemeAssignedIdTest()
+        {
+            // TODO unit test for the property 'SchemeAssignedId'
+        }
+        /// <summary>
+        /// Test the property 'DeviceUrl'
+        /// </summary>
+        [Test]
+        public void DeviceUrlTest()
+        {
+            // TODO unit test for the property 'DeviceUrl'
+        }
 
     }
 

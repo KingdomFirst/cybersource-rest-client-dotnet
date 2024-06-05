@@ -11,7 +11,7 @@ OpenAPI spec version: 0.0.1
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCD7A801-8A2F-4331-B3D2-0B68BEF007FE}</ProjectGuid>
+    <ProjectGuid>{1E8A86AA-98FB-4E77-A4F8-BAABCCCCA0DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CyberSource</RootNamespace>
@@ -41,7 +41,11 @@ OpenAPI spec version: 0.0.1
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+	 <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\NLog.5.0.0\lib\net46\NLog.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
@@ -82,11 +86,7 @@ OpenAPI spec version: 0.0.1
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="AuthenticationSdk">
-      <HintPath>packages\CyberSource.Authentication.0.0.0.17\lib\AuthenticationSdk.dll</HintPath>
-    </Reference>
-    <Reference Include="NLog">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
+      <HintPath>packages\CyberSource.Authentication.0.0.0.20\lib\AuthenticationSdk.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

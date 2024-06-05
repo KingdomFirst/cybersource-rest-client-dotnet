@@ -153,6 +153,22 @@ namespace CyberSource.Test
             // TODO unit test for the property 'CountryOfOrigin'
         }
         /// <summary>
+        /// Test the property 'StoreId'
+        /// </summary>
+        [Test]
+        public void StoreIdTest()
+        {
+            // TODO unit test for the property 'StoreId'
+        }
+        /// <summary>
+        /// Test the property 'StoreName'
+        /// </summary>
+        [Test]
+        public void StoreNameTest()
+        {
+            // TODO unit test for the property 'StoreName'
+        }
+        /// <summary>
         /// Test the property 'CustomerServicePhoneNumber'
         /// </summary>
         [Test]

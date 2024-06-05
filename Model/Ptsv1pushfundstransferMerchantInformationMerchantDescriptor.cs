@@ -35,17 +35,19 @@ namespace CyberSource.Model
         /// </summary>
         /// <param name="AdministrativeArea">The state where the merchant is located.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Note This field is supported only for businesses located in the U.S. or Canada. .</param>
         /// <param name="Contact">For the descriptions, used-by information, data types, and lengths for these fields, see merchant_descriptor_contact field description in Credit Card Services Using the SCMP API.- -&gt; Contact information for the merchant.  Note These are the maximum data lengths for the following payment processors:  FDC Compass (13) Chase Paymentech (13). .</param>
-        /// <param name="Country">Merchant&#39;s country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder’s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. .</param>
-        /// <param name="Locality">Merchant&#39;s City.  City for your business location. This value might be displayed on the cardholder’s statement. .</param>
-        /// <param name="Name">Merchant&#39;s business name. This name is displayed on the cardholder’s statement.  Chase Paymentech, Visa Platform Connect: length 22 .</param>
-        /// <param name="PostalCode">Merchant&#39;s postal code. This value might be displayed on the cardholder’s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 .</param>
-        public Ptsv1pushfundstransferMerchantInformationMerchantDescriptor(string AdministrativeArea = default(string), string Contact = default(string), string Country = default(string), string Locality = default(string), string Name = default(string), string PostalCode = default(string))
+        /// <param name="Country">Merchant&#39;s country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder&#39;s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. .</param>
+        /// <param name="Locality">Merchant&#39;s City.  City for your business location. This value might be displayed on the cardholder&#39;s statement. .</param>
+        /// <param name="Name">Merchant&#39;s business name. This name is displayed on the cardholder&#39;s statement.  Chase Paymentech, Visa Platform Connect: length 22 .</param>
+        /// <param name="StoreId">The unique id of the merchant&#39;s shop which assigned by the merchant. .</param>
+        /// <param name="PostalCode">Merchant&#39;s postal code. This value might be displayed on the cardholder&#39;s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 .</param>
+        public Ptsv1pushfundstransferMerchantInformationMerchantDescriptor(string AdministrativeArea = default(string), string Contact = default(string), string Country = default(string), string Locality = default(string), string Name = default(string), string StoreId = default(string), string PostalCode = default(string))
         {
             this.AdministrativeArea = AdministrativeArea;
             this.Contact = Contact;
             this.Country = Country;
             this.Locality = Locality;
             this.Name = Name;
+            this.StoreId = StoreId;
             this.PostalCode = PostalCode;
         }
         
@@ -64,30 +66,37 @@ namespace CyberSource.Model
         public string Contact { get; set; }
 
         /// <summary>
-        /// Merchant&#39;s country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder’s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. 
+        /// Merchant&#39;s country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder&#39;s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. 
         /// </summary>
-        /// <value>Merchant&#39;s country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder’s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. </value>
+        /// <value>Merchant&#39;s country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder&#39;s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. </value>
         [DataMember(Name="country", EmitDefaultValue=false)]
         public string Country { get; set; }
 
         /// <summary>
-        /// Merchant&#39;s City.  City for your business location. This value might be displayed on the cardholder’s statement. 
+        /// Merchant&#39;s City.  City for your business location. This value might be displayed on the cardholder&#39;s statement. 
         /// </summary>
-        /// <value>Merchant&#39;s City.  City for your business location. This value might be displayed on the cardholder’s statement. </value>
+        /// <value>Merchant&#39;s City.  City for your business location. This value might be displayed on the cardholder&#39;s statement. </value>
         [DataMember(Name="locality", EmitDefaultValue=false)]
         public string Locality { get; set; }
 
         /// <summary>
-        /// Merchant&#39;s business name. This name is displayed on the cardholder’s statement.  Chase Paymentech, Visa Platform Connect: length 22 
+        /// Merchant&#39;s business name. This name is displayed on the cardholder&#39;s statement.  Chase Paymentech, Visa Platform Connect: length 22 
         /// </summary>
-        /// <value>Merchant&#39;s business name. This name is displayed on the cardholder’s statement.  Chase Paymentech, Visa Platform Connect: length 22 </value>
+        /// <value>Merchant&#39;s business name. This name is displayed on the cardholder&#39;s statement.  Chase Paymentech, Visa Platform Connect: length 22 </value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Merchant&#39;s postal code. This value might be displayed on the cardholder’s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 
+        /// The unique id of the merchant&#39;s shop which assigned by the merchant. 
         /// </summary>
-        /// <value>Merchant&#39;s postal code. This value might be displayed on the cardholder’s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 </value>
+        /// <value>The unique id of the merchant&#39;s shop which assigned by the merchant. </value>
+        [DataMember(Name="storeId", EmitDefaultValue=false)]
+        public string StoreId { get; set; }
+
+        /// <summary>
+        /// Merchant&#39;s postal code. This value might be displayed on the cardholder&#39;s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 
+        /// </summary>
+        /// <value>Merchant&#39;s postal code. This value might be displayed on the cardholder&#39;s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 </value>
         [DataMember(Name="postalCode", EmitDefaultValue=false)]
         public string PostalCode { get; set; }
 
@@ -104,6 +113,7 @@ namespace CyberSource.Model
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  Locality: ").Append(Locality).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  StoreId: ").Append(StoreId).Append("\n");
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -167,6 +177,11 @@ namespace CyberSource.Model
                     this.Name.Equals(other.Name)
                 ) && 
                 (
+                    this.StoreId == other.StoreId ||
+                    this.StoreId != null &&
+                    this.StoreId.Equals(other.StoreId)
+                ) && 
+                (
                     this.PostalCode == other.PostalCode ||
                     this.PostalCode != null &&
                     this.PostalCode.Equals(other.PostalCode)
@@ -194,6 +209,8 @@ namespace CyberSource.Model
                     hash = hash * 59 + this.Locality.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.StoreId != null)
+                    hash = hash * 59 + this.StoreId.GetHashCode();
                 if (this.PostalCode != null)
                     hash = hash * 59 + this.PostalCode.GetHashCode();
                 return hash;

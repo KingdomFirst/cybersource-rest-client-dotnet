@@ -51,9 +51,9 @@ namespace CyberSource.Model
         /// <param name="AchVerification">AchVerification.</param>
         /// <param name="Customer">Customer.</param>
         /// <param name="ConsumerAuthenticationResponse">ConsumerAuthenticationResponse.</param>
-        /// <param name="SystemTraceAuditNumber">This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer’s receipt. .</param>
-        /// <param name="PaymentAccountReferenceNumber">Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. .</param>
-        /// <param name="TransactionIntegrityCode">Transaction integrity classification provided by Mastercard. This value specifies Mastercard’s evaluation of the transaction’s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - &#x60;A1&#x60;: EMV or token in a secure, trusted environment  - &#x60;B1&#x60;: EMV or chip equivalent  - &#x60;C1&#x60;: Magnetic stripe  - &#x60;E1&#x60;: Key entered  - &#x60;U0&#x60;: Unclassified  For card-not-present transactions, possible values:   - &#x60;A2&#x60;: Digital transactions  - &#x60;B2&#x60;: Authenticated checkout  - &#x60;C2&#x60;: Transaction validation  - &#x60;D2&#x60;: Enhanced data  - &#x60;E2&#x60;: Generic messaging  - &#x60;U0&#x60;: Unclassified  For information about these values, contact Mastercard or your acquirer.  #### CyberSource through VisaNet  The value for this field corresponds to the following data in the TC 33 capture file,&lt;sup&gt;1&lt;/sup&gt;: - Record: CP01 TCR6 - Position: 136-137 - Field: Mastercard Transaction Integrity Classification  &lt;sup&gt;1&lt;/sup&gt; The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. .</param>
+        /// <param name="SystemTraceAuditNumber">This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer&#39;s receipt. .</param>
+        /// <param name="PaymentAccountReferenceNumber">Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. .</param>
+        /// <param name="TransactionIntegrityCode">Transaction integrity classification provided by Mastercard. This value specifies Mastercard&#39;s evaluation of the transaction&#39;s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - &#x60;A1&#x60;: EMV or token in a secure, trusted environment  - &#x60;B1&#x60;: EMV or chip equivalent  - &#x60;C1&#x60;: Magnetic stripe  - &#x60;E1&#x60;: Key entered  - &#x60;U0&#x60;: Unclassified  For card-not-present transactions, possible values:   - &#x60;A2&#x60;: Digital transactions  - &#x60;B2&#x60;: Authenticated checkout  - &#x60;C2&#x60;: Transaction validation  - &#x60;D2&#x60;: Enhanced data  - &#x60;E2&#x60;: Generic messaging  - &#x60;U0&#x60;: Unclassified  For information about these values, contact Mastercard or your acquirer.  #### CyberSource through VisaNet  The value for this field corresponds to the following data in the TC 33 capture file,&lt;sup&gt;1&lt;/sup&gt;: - Record: CP01 TCR6 - Position: 136-137 - Field: Mastercard Transaction Integrity Classification  &lt;sup&gt;1&lt;/sup&gt; The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. .</param>
         /// <param name="AmexVerbalAuthReferenceNumber">Referral response number for a verbal authorization with FDMS Nashville when using an American Express card. Give this number to American Express when you call them for the verbal authorization. .</param>
         /// <param name="MasterCardServiceCode">Mastercard service that was used for the transaction. Mastercard provides this value to CyberSource.  Possible value:  - 53: Mastercard card-on-file token service  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 133-134 - Field: Mastercard Merchant on-behalf service. **Note** This field is returned only for CyberSource through VisaNet. .</param>
         /// <param name="MasterCardServiceReplyCode">Result of the Mastercard card-on-file token service. Mastercard provides this value to CyberSource.  Possible values:   - &#x60;C&#x60;: Service completed successfully.  - &#x60;F&#x60;: One of the following:    - Incorrect Mastercard POS entry mode. The Mastercard POS entry mode should be 81 for an authorization or      authorization reversal.    - Incorrect Mastercard POS entry mode. The Mastercard POS entry mode should be 01 for a tokenized request.    - Token requestor ID is missing or formatted incorrectly.  - &#x60;I&#x60;: One of the following:    - Invalid token requestor ID.    - Suspended or deactivated token.    - Invalid token (not in mapping table).  - &#x60;T&#x60;: Invalid combination of token requestor ID and token.  - &#x60;U&#x60;: Expired token.  - &#x60;W&#x60;: Primary account number (PAN) listed in electronic warning bulletin.  **Note** This field is returned only for **CyberSource through VisaNet**. .</param>
@@ -66,7 +66,12 @@ namespace CyberSource.Model
         /// <param name="CompleteUrl">The redirect URL for forwarding the consumer to complete page.  This redirect needed by PSP to track browser information of consumer. PSP then redirect consumer to merchant success URL. .</param>
         /// <param name="Signature">Signature.</param>
         /// <param name="PublicKey">PublicKey.</param>
-        public PtsV2PaymentsPost201ResponseProcessorInformation(string AuthIndicator = default(string), string ApprovalCode = default(string), string CardReferenceData = default(string), string TransactionId = default(string), string NetworkTransactionId = default(string), string ResponseCode = default(string), string ResponseCodeSource = default(string), string ResponseDetails = default(string), string ResponseCategoryCode = default(string), string ForwardedAcquirerCode = default(string), string SettlementDate = default(string), PtsV2PaymentsPost201ResponseProcessorInformationAvs Avs = default(PtsV2PaymentsPost201ResponseProcessorInformationAvs), PtsV2PaymentsPost201ResponseProcessorInformationCardVerification CardVerification = default(PtsV2PaymentsPost201ResponseProcessorInformationCardVerification), PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice MerchantAdvice = default(PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice), PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults ElectronicVerificationResults = default(PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults), PtsV2PaymentsPost201ResponseProcessorInformationAchVerification AchVerification = default(PtsV2PaymentsPost201ResponseProcessorInformationAchVerification), PtsV2PaymentsPost201ResponseProcessorInformationCustomer Customer = default(PtsV2PaymentsPost201ResponseProcessorInformationCustomer), PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse ConsumerAuthenticationResponse = default(PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse), string SystemTraceAuditNumber = default(string), string PaymentAccountReferenceNumber = default(string), string TransactionIntegrityCode = default(string), string AmexVerbalAuthReferenceNumber = default(string), string MasterCardServiceCode = default(string), string MasterCardServiceReplyCode = default(string), string MasterCardAuthenticationType = default(string), string Name = default(string), PtsV2PaymentsPost201ResponseProcessorInformationRouting Routing = default(PtsV2PaymentsPost201ResponseProcessorInformationRouting), string MerchantNumber = default(string), string RetrievalReferenceNumber = default(string), string PaymentUrl = default(string), string CompleteUrl = default(string), string Signature = default(string), string PublicKey = default(string))
+        /// <param name="SellerProtection">SellerProtection.</param>
+        /// <param name="TransactionExpiryDate">The date on which the transaction expires and payment cannot be made. .</param>
+        /// <param name="CustomUrl">For merchants to declare customs Customs declaration service URL. .</param>
+        /// <param name="SchemeAssignedId">Unique id assigned to a merchant by the APM and not PSP The merchant ID, as boarded with Alipay .</param>
+        /// <param name="DeviceUrl">The QR code value. Convert this value into an image and send it to the POS terminal to be displayed. The terminal can also perform the conversion. The value is a URL like in the example below: https://qr.alipay.com/pmxabcka1ts5grar12. .</param>
+        public PtsV2PaymentsPost201ResponseProcessorInformation(string AuthIndicator = default(string), string ApprovalCode = default(string), string CardReferenceData = default(string), string TransactionId = default(string), string NetworkTransactionId = default(string), string ResponseCode = default(string), string ResponseCodeSource = default(string), string ResponseDetails = default(string), string ResponseCategoryCode = default(string), string ForwardedAcquirerCode = default(string), string SettlementDate = default(string), PtsV2PaymentsPost201ResponseProcessorInformationAvs Avs = default(PtsV2PaymentsPost201ResponseProcessorInformationAvs), PtsV2PaymentsPost201ResponseProcessorInformationCardVerification CardVerification = default(PtsV2PaymentsPost201ResponseProcessorInformationCardVerification), PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice MerchantAdvice = default(PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice), PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults ElectronicVerificationResults = default(PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults), PtsV2PaymentsPost201ResponseProcessorInformationAchVerification AchVerification = default(PtsV2PaymentsPost201ResponseProcessorInformationAchVerification), PtsV2PaymentsPost201ResponseProcessorInformationCustomer Customer = default(PtsV2PaymentsPost201ResponseProcessorInformationCustomer), PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse ConsumerAuthenticationResponse = default(PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse), string SystemTraceAuditNumber = default(string), string PaymentAccountReferenceNumber = default(string), string TransactionIntegrityCode = default(string), string AmexVerbalAuthReferenceNumber = default(string), string MasterCardServiceCode = default(string), string MasterCardServiceReplyCode = default(string), string MasterCardAuthenticationType = default(string), string Name = default(string), PtsV2PaymentsPost201ResponseProcessorInformationRouting Routing = default(PtsV2PaymentsPost201ResponseProcessorInformationRouting), string MerchantNumber = default(string), string RetrievalReferenceNumber = default(string), string PaymentUrl = default(string), string CompleteUrl = default(string), string Signature = default(string), string PublicKey = default(string), PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection SellerProtection = default(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection), string TransactionExpiryDate = default(string), string CustomUrl = default(string), string SchemeAssignedId = default(string), string DeviceUrl = default(string))
         {
             this.AuthIndicator = AuthIndicator;
             this.ApprovalCode = ApprovalCode;
@@ -101,6 +106,11 @@ namespace CyberSource.Model
             this.CompleteUrl = CompleteUrl;
             this.Signature = Signature;
             this.PublicKey = PublicKey;
+            this.SellerProtection = SellerProtection;
+            this.TransactionExpiryDate = TransactionExpiryDate;
+            this.CustomUrl = CustomUrl;
+            this.SchemeAssignedId = SchemeAssignedId;
+            this.DeviceUrl = DeviceUrl;
         }
         
         /// <summary>
@@ -223,23 +233,23 @@ namespace CyberSource.Model
         public PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse ConsumerAuthenticationResponse { get; set; }
 
         /// <summary>
-        /// This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer’s receipt. 
+        /// This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer&#39;s receipt. 
         /// </summary>
-        /// <value>This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer’s receipt. </value>
+        /// <value>This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer&#39;s receipt. </value>
         [DataMember(Name="systemTraceAuditNumber", EmitDefaultValue=false)]
         public string SystemTraceAuditNumber { get; set; }
 
         /// <summary>
-        /// Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. 
+        /// Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. 
         /// </summary>
-        /// <value>Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. </value>
+        /// <value>Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. </value>
         [DataMember(Name="paymentAccountReferenceNumber", EmitDefaultValue=false)]
         public string PaymentAccountReferenceNumber { get; set; }
 
         /// <summary>
-        /// Transaction integrity classification provided by Mastercard. This value specifies Mastercard’s evaluation of the transaction’s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - &#x60;A1&#x60;: EMV or token in a secure, trusted environment  - &#x60;B1&#x60;: EMV or chip equivalent  - &#x60;C1&#x60;: Magnetic stripe  - &#x60;E1&#x60;: Key entered  - &#x60;U0&#x60;: Unclassified  For card-not-present transactions, possible values:   - &#x60;A2&#x60;: Digital transactions  - &#x60;B2&#x60;: Authenticated checkout  - &#x60;C2&#x60;: Transaction validation  - &#x60;D2&#x60;: Enhanced data  - &#x60;E2&#x60;: Generic messaging  - &#x60;U0&#x60;: Unclassified  For information about these values, contact Mastercard or your acquirer.  #### CyberSource through VisaNet  The value for this field corresponds to the following data in the TC 33 capture file,&lt;sup&gt;1&lt;/sup&gt;: - Record: CP01 TCR6 - Position: 136-137 - Field: Mastercard Transaction Integrity Classification  &lt;sup&gt;1&lt;/sup&gt; The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. 
+        /// Transaction integrity classification provided by Mastercard. This value specifies Mastercard&#39;s evaluation of the transaction&#39;s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - &#x60;A1&#x60;: EMV or token in a secure, trusted environment  - &#x60;B1&#x60;: EMV or chip equivalent  - &#x60;C1&#x60;: Magnetic stripe  - &#x60;E1&#x60;: Key entered  - &#x60;U0&#x60;: Unclassified  For card-not-present transactions, possible values:   - &#x60;A2&#x60;: Digital transactions  - &#x60;B2&#x60;: Authenticated checkout  - &#x60;C2&#x60;: Transaction validation  - &#x60;D2&#x60;: Enhanced data  - &#x60;E2&#x60;: Generic messaging  - &#x60;U0&#x60;: Unclassified  For information about these values, contact Mastercard or your acquirer.  #### CyberSource through VisaNet  The value for this field corresponds to the following data in the TC 33 capture file,&lt;sup&gt;1&lt;/sup&gt;: - Record: CP01 TCR6 - Position: 136-137 - Field: Mastercard Transaction Integrity Classification  &lt;sup&gt;1&lt;/sup&gt; The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. 
         /// </summary>
-        /// <value>Transaction integrity classification provided by Mastercard. This value specifies Mastercard’s evaluation of the transaction’s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - &#x60;A1&#x60;: EMV or token in a secure, trusted environment  - &#x60;B1&#x60;: EMV or chip equivalent  - &#x60;C1&#x60;: Magnetic stripe  - &#x60;E1&#x60;: Key entered  - &#x60;U0&#x60;: Unclassified  For card-not-present transactions, possible values:   - &#x60;A2&#x60;: Digital transactions  - &#x60;B2&#x60;: Authenticated checkout  - &#x60;C2&#x60;: Transaction validation  - &#x60;D2&#x60;: Enhanced data  - &#x60;E2&#x60;: Generic messaging  - &#x60;U0&#x60;: Unclassified  For information about these values, contact Mastercard or your acquirer.  #### CyberSource through VisaNet  The value for this field corresponds to the following data in the TC 33 capture file,&lt;sup&gt;1&lt;/sup&gt;: - Record: CP01 TCR6 - Position: 136-137 - Field: Mastercard Transaction Integrity Classification  &lt;sup&gt;1&lt;/sup&gt; The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. </value>
+        /// <value>Transaction integrity classification provided by Mastercard. This value specifies Mastercard&#39;s evaluation of the transaction&#39;s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - &#x60;A1&#x60;: EMV or token in a secure, trusted environment  - &#x60;B1&#x60;: EMV or chip equivalent  - &#x60;C1&#x60;: Magnetic stripe  - &#x60;E1&#x60;: Key entered  - &#x60;U0&#x60;: Unclassified  For card-not-present transactions, possible values:   - &#x60;A2&#x60;: Digital transactions  - &#x60;B2&#x60;: Authenticated checkout  - &#x60;C2&#x60;: Transaction validation  - &#x60;D2&#x60;: Enhanced data  - &#x60;E2&#x60;: Generic messaging  - &#x60;U0&#x60;: Unclassified  For information about these values, contact Mastercard or your acquirer.  #### CyberSource through VisaNet  The value for this field corresponds to the following data in the TC 33 capture file,&lt;sup&gt;1&lt;/sup&gt;: - Record: CP01 TCR6 - Position: 136-137 - Field: Mastercard Transaction Integrity Classification  &lt;sup&gt;1&lt;/sup&gt; The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant&#39;s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. </value>
         [DataMember(Name="transactionIntegrityCode", EmitDefaultValue=false)]
         public string TransactionIntegrityCode { get; set; }
 
@@ -325,6 +335,40 @@ namespace CyberSource.Model
         public string PublicKey { get; set; }
 
         /// <summary>
+        /// Gets or Sets SellerProtection
+        /// </summary>
+        [DataMember(Name="sellerProtection", EmitDefaultValue=false)]
+        public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection SellerProtection { get; set; }
+
+        /// <summary>
+        /// The date on which the transaction expires and payment cannot be made. 
+        /// </summary>
+        /// <value>The date on which the transaction expires and payment cannot be made. </value>
+        [DataMember(Name="transactionExpiryDate", EmitDefaultValue=false)]
+        public string TransactionExpiryDate { get; set; }
+
+        /// <summary>
+        /// For merchants to declare customs Customs declaration service URL. 
+        /// </summary>
+        /// <value>For merchants to declare customs Customs declaration service URL. </value>
+        [DataMember(Name="customUrl", EmitDefaultValue=false)]
+        public string CustomUrl { get; set; }
+
+        /// <summary>
+        /// Unique id assigned to a merchant by the APM and not PSP The merchant ID, as boarded with Alipay 
+        /// </summary>
+        /// <value>Unique id assigned to a merchant by the APM and not PSP The merchant ID, as boarded with Alipay </value>
+        [DataMember(Name="schemeAssignedId", EmitDefaultValue=false)]
+        public string SchemeAssignedId { get; set; }
+
+        /// <summary>
+        /// The QR code value. Convert this value into an image and send it to the POS terminal to be displayed. The terminal can also perform the conversion. The value is a URL like in the example below: https://qr.alipay.com/pmxabcka1ts5grar12. 
+        /// </summary>
+        /// <value>The QR code value. Convert this value into an image and send it to the POS terminal to be displayed. The terminal can also perform the conversion. The value is a URL like in the example below: https://qr.alipay.com/pmxabcka1ts5grar12. </value>
+        [DataMember(Name="deviceUrl", EmitDefaultValue=false)]
+        public string DeviceUrl { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -365,6 +409,11 @@ namespace CyberSource.Model
             sb.Append("  CompleteUrl: ").Append(CompleteUrl).Append("\n");
             sb.Append("  Signature: ").Append(Signature).Append("\n");
             sb.Append("  PublicKey: ").Append(PublicKey).Append("\n");
+            sb.Append("  SellerProtection: ").Append(SellerProtection).Append("\n");
+            sb.Append("  TransactionExpiryDate: ").Append(TransactionExpiryDate).Append("\n");
+            sb.Append("  CustomUrl: ").Append(CustomUrl).Append("\n");
+            sb.Append("  SchemeAssignedId: ").Append(SchemeAssignedId).Append("\n");
+            sb.Append("  DeviceUrl: ").Append(DeviceUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -565,6 +614,31 @@ namespace CyberSource.Model
                     this.PublicKey == other.PublicKey ||
                     this.PublicKey != null &&
                     this.PublicKey.Equals(other.PublicKey)
+                ) && 
+                (
+                    this.SellerProtection == other.SellerProtection ||
+                    this.SellerProtection != null &&
+                    this.SellerProtection.Equals(other.SellerProtection)
+                ) && 
+                (
+                    this.TransactionExpiryDate == other.TransactionExpiryDate ||
+                    this.TransactionExpiryDate != null &&
+                    this.TransactionExpiryDate.Equals(other.TransactionExpiryDate)
+                ) && 
+                (
+                    this.CustomUrl == other.CustomUrl ||
+                    this.CustomUrl != null &&
+                    this.CustomUrl.Equals(other.CustomUrl)
+                ) && 
+                (
+                    this.SchemeAssignedId == other.SchemeAssignedId ||
+                    this.SchemeAssignedId != null &&
+                    this.SchemeAssignedId.Equals(other.SchemeAssignedId)
+                ) && 
+                (
+                    this.DeviceUrl == other.DeviceUrl ||
+                    this.DeviceUrl != null &&
+                    this.DeviceUrl.Equals(other.DeviceUrl)
                 );
         }
 
@@ -645,6 +719,16 @@ namespace CyberSource.Model
                     hash = hash * 59 + this.Signature.GetHashCode();
                 if (this.PublicKey != null)
                     hash = hash * 59 + this.PublicKey.GetHashCode();
+                if (this.SellerProtection != null)
+                    hash = hash * 59 + this.SellerProtection.GetHashCode();
+                if (this.TransactionExpiryDate != null)
+                    hash = hash * 59 + this.TransactionExpiryDate.GetHashCode();
+                if (this.CustomUrl != null)
+                    hash = hash * 59 + this.CustomUrl.GetHashCode();
+                if (this.SchemeAssignedId != null)
+                    hash = hash * 59 + this.SchemeAssignedId.GetHashCode();
+                if (this.DeviceUrl != null)
+                    hash = hash * 59 + this.DeviceUrl.GetHashCode();
                 return hash;
             }
         }
