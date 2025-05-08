@@ -8,17 +8,19 @@ OpenAPI spec version: 0.0.1
 
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Rock\Rock14\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\Rock\Rock14\packages\NUnit.3.10.1\build\NUnit.props')" />
   <PropertyGroup>
-    
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6F6DED7B-53AA-452B-9150-0778DE1BA9D8}</ProjectGuid>
+    <ProjectGuid>{DCD7A801-8A2F-4331-B3D2-0B68BEF007FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CyberSource</RootNamespace>
     <AssemblyName>cybersource-rest-client-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
